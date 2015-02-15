@@ -1,0 +1,15 @@
+/* css for Pure Black 156L theme
+*/
+
+body {margin: 0 auto; font-size:16px;}
+a:hover {color: gray;}
+.post a {text-decoration: underline !important;}
+.date a {text-decoration: none !important;}
+.posttitle {
+    font-size: 2em !important;
+    line-height: 1.2em;
+}
+.nav, .title {text-transform: uppercase;}
+figure {margin: 1em 0;}
+code{font-size: 0.8em; padding: 2px; background: lightgray;}
+pre code{display: block;}
