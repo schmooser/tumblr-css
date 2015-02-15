@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+<meta name="description" content="{block:Description}{MetaDescription}{/block:Description}">
+
+<style type="text/css">
+
+body {
+width: 500px;
+margin: 0 0 0 70px;
+font-family: malgun gothic, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 13px;
+color: #444;
+}
+a:link, a:visited {
+text-decoration: none;
+color: #000;
+}
+a:hover {
+color: #fff;
+}
+
+.title {
+margin-top: 40px;
+font-size: 26px;
+font-weight: bold;
+}
+.nav {
+font-size: 12px;
+font-weight: bold;
+margin-top: 5px
+}
+.post {
+line-height: 20px;
+margin-top: 80px
+}
+
+.posttitle, .postquote, .postlink, .postanswer {
+font-size: 16px;
+font-weight: bold;
+}
+blockquote {
+padding-left: 10px;
+margin-left: 15px;
+border-left: 1px solid #777;
+}
+
+.date {
+margin: 15px 0 10px 0;
+font-size: 12px;
+font-weight: bold;
+}
+
+ol.notes {
+margin: 20px 0 0 0;
+padding: 0px;
+}
+ol.notes li {
+list-style-type: none;
+line-height: 20px;
+}
+.notes .avatar{
+margin: 0 5px 0 0;
+position: relative;
+top: 3px;
+}
+
+.page {
+margin: 60px 0;
+font-size: 8px;
+text-align: center;
+}
+
+{CustomCSS}
+</style>
+
+</head>
+
+<div class="title"><a title="" href="/">{Title}</a></div>
+
+<div class="nav"><a href="/archive">archive</a>{block:AskEnabled}&nbsp;&nbsp;&nbsp;&nbsp;<a href="/ask">ask</a>{/block:AskEnabled}{block:SubmissionsEnabled}&nbsp;&nbsp;&nbsp;&nbsp;<a title="" href="/submit">Submit</a>{/block:SubmissionsEnabled}{block:HasPages}{block:Pages}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{URL}">{Label}</a>{block:Pages}{/block:HasPages}</div>
+
+<body>
+
+{block:Posts}
+
+<div class="post">
+
+<div class="date"><a href="{Permalink}">{block:Date}{DayOfMonth} {ShortMonth} {Year}{/block:Date}</a>{block:NoteCount}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{Permalink}">{NoteCountWithLabel}{/block:NoteCount}</a></div>
+
+{block:Text}
+{block:Title}<div class="posttitle">{Title}</div>{/block:Title}
+{Body}
+{/block:Text}
+
+{block:Photo}
+{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+{block:Caption}{Caption}{/block:Caption}
+{/block:Photo}
+
+{block:Photoset}
+{Photoset-500}
+{block:Caption}{Caption}{/block:Caption}
+{/block:Photoset}
+
+{block:Quote}
+<div class="postquote">&ldquo;{Quote}&rdquo;</div>
+{block:Source}</br>- {Source}{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<a title="" href="{URL}" class="postlink" {Target}>{Name}</a>
+{block:Description}{Description}{/block:Description}
+{/block:Link}
+
+{block:Audio}
+{block:AlbumArt}<img src="{AlbumArtURL}" height="207" width="207" />{/block:AlbumArt}
+<div>{AudioPlayerGrey}</div>
+<div>{block:Artist}{Artist}{/block:Artist} - {block:TrackName}{TrackName}{/block:TrackName}</div>
+{block:Caption}{Caption}{/block:Caption}
+{/block:Audio}
+
+{block:Chat}
+{block:Title}<div class="posttitle">{Title}</div>{/block:Title}
+{block:Lines}<div>{block:Label}<b>{Label}</b> {/block:Label}{Line}</div>{/block:Lines}
+{/block:Chat}
+
+{block:Video}
+{Video-500}
+{block:Caption}{Caption}{/block:Caption}
+{/block:Video}
+
+{block:Answer}
+<div class="postanswer">{Asker} said: {Question}</div>
+{Answer}
+{/block:Answer}
+
+</div>
+
+{/block:Posts}
+
+{block:PostNotes}{PostNotes}{/block:PostNotes}
+
+<div class="page">{block:PreviousPage}<a title="" href="{PreviousPage}">━</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/block:PreviousPage}{block:NextPage}<a title"" href="{NextPage}">╋</a>{/block:NextPage}</div>
+
+</body>
+
+</html>
